@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    version="4.0"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:javaee="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    
+    <!-- version of dynamic web module (properties > project facets) affects web.xml layout-->
+    
+	<display-name>Archetype Created Web Application</display-name>
+	
+	<servlet>
+ 		<servlet-name>AddEmp</servlet-name>
+		<servlet-class>javaFiles.AddEmp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	 	<servlet-name>AddEmp</servlet-name>
+	 	<url-pattern>/AddEmp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+ 		<servlet-name>ModOrView</servlet-name>
+		<servlet-class>javaFiles.ModOrView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	 	<servlet-name>ModOrView</servlet-name>
+	 	<url-pattern>/ModOrView</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+ 		<servlet-name>DeleteEmp</servlet-name>
+		<servlet-class>javaFiles.DeleteEmp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	 	<servlet-name>DeleteEmp</servlet-name>
+	 	<url-pattern>/DeleteEmp</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>	
+	</welcome-file-list>
+	
+</web-app>
