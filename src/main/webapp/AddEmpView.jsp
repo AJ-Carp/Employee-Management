@@ -4,63 +4,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Employee</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+<style>
+	.input-div {
+		width: 550px;
+		height: 450px;
+	}
+</style>
 </head>
 <body>
 <main class="row">
-	<div class="col">
-		<h2>Enter info for the new employee:</h2>
-		
-		<form method="post" action="AddEmp">
-			<table>
-				<tr>
-					<td>Enter id:</td>
-					<td><input type="text" name="id"></td>
-				</tr>
-				
-				<tr>
-					<td>Enter name:</td>
-					<td><input type="text" name="name"></td>
-				</tr>
-				
-				<tr>
-					<td>Enter age:</td>
-					<td><input type="text" name="age"></td>
-				</tr>
-				
-				<tr>
-					<td>Enter gender:</td>
-					<td><input type="text" name="gender"></td>
-				</tr>
-				
-				<tr>
-					<td><input type="submit"></td>
-				</tr>
-			</table>
-		</form>
-		
-		<c:if test="${invalidInput}">
-			<p>Invalid Input</p>
-		</c:if>
-		
-		<c:if test="${rowsAffected > 0}">
-			<p>New employee added</p>
-		</c:if>
-
-		<c:if test="${rowsAffected == 0}">
-			<p>Employee not added, ID already exists</p>
-		</c:if>
-		
-		<form action="index.jsp">
-			<button type="submit">Return to home</button>
-		</form>
+	<div class="input-div">
+		<div class="col card border-0">
+			<h2 class="card-header">Enter info for the new employee:</h2>
+			
+			<form class="card-body" method="post" action="AddEmp">
+				<table>
+					<tr>
+						<td>Enter id:</td>
+						<td><input type="text" name="id"></td>
+					</tr>
+					
+					<tr>
+						<td>Enter name:</td>
+						<td><input type="text" name="name"></td>
+					</tr>
+					
+					<tr>
+						<td>Enter age:</td>
+						<td><input type="text" name="age"></td>
+					</tr>
+					
+					<tr>
+						<td>Enter gender:</td>
+						<td><input type="text" name="gender"></td>
+					</tr>
+					
+					<tr>
+						<td><input class="btn btn-success mt-3" type="submit"></td>
+					</tr>
+					
+					<tr>
+						<td><a href="index.jsp" class="btn btn-warning mt-3">Return to home</a></td>
+					</tr>				
+			
+					<c:if test="${invalidInput}">
+						<p>Invalid Input</p>
+					</c:if>
+					
+					<c:if test="${rowsAffected > 0}">
+						<p>New employee added</p>
+					</c:if>
+			
+					<c:if test="${rowsAffected == 0}">
+						<p>Employee not added, ID already exists</p>
+					</c:if>	
+				</table>
+			</form>
+		</div>
 	</div>
-		
 	<div class="col">
 		<%@ page import="javaFiles.Employee" %>
 		<%@ page import="javaFiles.EmployeeDao" %>
@@ -71,7 +78,7 @@
 		%>
 		
 		<div>
-			<table>
+			<table class="table">
 	    		<thead>
 	        		<tr>
 			            <th>ID</th>
