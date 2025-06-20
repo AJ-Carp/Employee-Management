@@ -9,32 +9,48 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+<style>
+	.input-div {
+		width: 550px;
+		height: 500px
+	}
+	.buttons {
+		width: 150px;
+	}
+</style>
 </head>
 <body>
 <main class="row">
-	<div class="col">
-		<form method="post" action="DeleteEmp">
-			<h3>Enter the ID of the employee you would like to delete:</h3>
-			<input type="text" name="id">
-			<input type="submit">
-		</form>
-		
-		<c:if test="${empNotFound}">
-			<p>ID not found</p>
-		</c:if>
-		
-		<c:if test="${invalidInput}">
-			<p>Invalid Input</p>
-		</c:if>
-		
-		<c:if test="${empDeleted}">
-			<p>Employee Deleted</p>
-		</c:if>
-		
-		<form action="index.jsp">
-			<button type="submit">Return to home</button>
-		</form>
+	<div class="input-div">
+		<div class="col card border-0">			
+			<h2 class="card-header">Enter the ID of the employee you would like to delete:</h2>
+			<div class="card-body">
+				<form method="post" action="DeleteEmp">		
+					<table>	
+						<tr>
+							<td><input type="text" name="id"></td>
+							<td><input class="btn btn-success ml-3" type="submit"></td>
+						</tr>
+							
+						<tr>
+							<td><a href="index.jsp" class="btn mt-3 btn-warning buttons">Return to home</a><td>
+						</tr>
+					</table>
+				</form>
+				
+				<c:if test="${empNotFound}">
+					ID not found
+				</c:if>
+				
+				<c:if test="${invalidInput}">
+					Invalid Input
+				</c:if>
+				
+				<c:if test="${empDeleted}">
+					Employee Deleted
+				</c:if>
+			</div>		
+		</div>
 	</div>
 	
 	<div class="col">
@@ -47,7 +63,7 @@
 		%>
 		
 		<div>
-			<table>
+			<table class="table">
 	    		<thead>
 	        		<tr>
 			            <th>ID</th>

@@ -9,14 +9,26 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
 <style>
 	.input-div {
 		width: 550px;
-		height: 450px;
+		height: 500px
 	}
 	.buttons {
 		width: 150px;
+	}
+	@media (max-width: 805px) {
+		.small-page-input {
+			display: inline-block;
+		}
+		.small-page-buttons {
+			display: inline-block;
+			margin-top: 193px;
+			margin-left: 15px;
+		}
+		.small-page-content {
+			display: flex;
+		}
 	}
 </style>
 </head>
@@ -24,30 +36,32 @@
 <main class="row">
 	<div class="input-div">
 		<div class="col card border-0">
-			<h2 class="card-header">Enter the ID:</h2>
+			<h2 class="card-header">Enter the ID of the employee you would like to modify or view:</h2>
 			<div class="card-body">
 				<form method="post" action="ModOrView">
 					<input type="hidden" name="action" value="enterId">
 					<table>
 						<tr>
 							<td><input type="text" name="id"></td>
+							<td><input class="btn btn-success ml-3" type="submit"></td>
 						</tr>
+						
 						<tr>
-							<td><input class="btn btn-success mt-3 mb-3" type="submit"></td>
+							<td><a href="index.jsp" class="btn mt-3 btn-warning buttons">Return to home</a><td>
 						</tr>
 					</table>
 				</form>
 				
 				<c:if test="${!empty idFound && !idFound}">
-					<p>ID not found</p>
+					ID not found
 				</c:if>
 				
 				<c:if test="${invalidInput}">
-					<p>Invalid Input</p>
+					Invalid Input
 				</c:if>
 				
 				<c:if test="${empModified}">
-					<p>Employee Info has been changed</p>
+					Employee Info has been changed
 				</c:if>
 
 				<c:if test="${idFound}">
@@ -55,41 +69,47 @@
 					<form method="post" action="ModOrView">
 						<input type="hidden" name="action" value="modify">
 						<input type="hidden" name="id" value="${emp.id}">
-						<table>			
-							<tr>
-								<td><p class="mb-3" >ID: ${emp.id} (ID cannot be changed)</p></td>
-							</tr>
-							<tr>
-								<td>
-									<p class="mb-1">Name: ${emp.name}</p>
-									<input class="mb-3" type="text" name="name">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p class="mb-1">Age: ${emp.age}</p>
-									<input class="mb-3" type="text" name="age">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p class="mb-1">Gender: ${emp.gender}</p>
-									<input class="mb-3" type="text" name="gender">
-								</td>
-							</tr>
-							<tr>
-								<td><input class="btn btn-success mb-3 buttons" type="submit" value="Commit changes"></td>
-							</tr>
-						</table>	
+						<div class="small-page-content"> 
+							<div class="small-page-input">	
+								<table>	
+									<tr>
+										<td><p class="mb-2" >ID: ${emp.id} (cannot be changed)</p></td>
+									</tr>
+									<tr>
+										<td>
+											<p class="mb-1">Name: ${emp.name}</p>
+											<input class="mb-2" type="text" name="name">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="mb-1">Age: ${emp.age}</p>
+											<input class="mb-2" type="text" name="age">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="mb-1">Gender: ${emp.gender}</p>
+											<input class="mb-2" type="text" name="gender">
+										</td>
+									</tr>
+								</table>
+							</div>
+							
+						
+								
+							<div class="small-page-buttons">
+								<input class="btn btn-success buttons" type="submit" value="Commit changes">
+							</div>
+						</div>
+								
 					</form>
 				</c:if>
-				
-				<a href="index.jsp" class="btn btn-warning buttons">Return to home</a>
 			</div>
 		</div>
 	</div>
 		
-	<div class="col">
+	<div class=" col">
 		<%@ page import="javaFiles.Employee" %>
 		<%@ page import="javaFiles.EmployeeDao" %>
 		<%@ page import="java.util.List" %>
