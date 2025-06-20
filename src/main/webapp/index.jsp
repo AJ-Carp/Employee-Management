@@ -4,34 +4,43 @@
 <html>
 <head> 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+<style>
+	.input-div {
+		width: 550px;
+		height: 450px;
+	}
+	.buttons {
+		width: 200px;
+	}
+</style>
 </head>
 <body>
 <main class="row">
-	<div class="col">
-		<h2>What would you like to do?</h2>
-		<div>
-			<div>
-		 		<form method="post" action="AddEmpView.jsp">
-	   				<button type="submit">Add New Employee</button>
-				</form>
-			</div>
-		
-			<div>
-		 		<form method="post" action="ModOrViewView.jsp">
-	   				<button type="submit">Modify/View Employee</button>
-				</form>
-			</div>
+	<div class="input-div">
+		<div class="col card border-0">
+			<h2 class="card-header">What would you like to do?</h2>
+			<div class="card-body">
 			
-			<div>
-		 		<form method="post" action="DeleteEmpView.jsp">
-	   				<button type="submit">Delete Employee</button>
+		 		<form method="post" action="AddEmpView.jsp">
+	   				<button class="buttons btn btn-info m-3" type="submit">Add New Employee</button>
 				</form>
+			
+		
+		 		<form method="post" action="ModOrViewView.jsp">
+	   				<button class="buttons btn btn-info m-3" type="submit">Modify/View Employee</button>
+				</form>
+		
+	
+		 		<form method="post" action="DeleteEmpView.jsp">
+	   				<button class="buttons btn btn-info m-3" type="submit">Delete Employee</button>
+				</form>
+		
 			</div>
 		</div>
 	</div>
@@ -46,7 +55,7 @@
 		%>
 		
 		<div>
-			<table>
+			<table class="table">
 	    		<thead>
 	        		<tr>
 			            <th>ID</th>

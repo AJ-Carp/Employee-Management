@@ -38,7 +38,7 @@ public class ModOrView extends HttpServlet {
 				request.getRequestDispatcher("ModOrViewView.jsp").forward(request, response);
 			}
 		}
-
+  
 			
 		else if (action.equals("modify")) {
 			try {
@@ -94,6 +94,7 @@ public class ModOrView extends HttpServlet {
 				e.printStackTrace();
 				request.setAttribute("emp", emp);
 				request.setAttribute("invalidInput", true);
+				request.setAttribute("idFound", true);
 				request.getRequestDispatcher("ModOrViewView.jsp").forward(request, response);
 			}
 		}
