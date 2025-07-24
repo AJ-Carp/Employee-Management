@@ -1,11 +1,11 @@
 CREATE TABLE Employees (
-  id SERIAL PRIMARY KEY,
+  id INT PRIMARY KEY,
   name VARCHAR(100),
   age INT,
   gender VARCHAR(100)
 );
 
-INSERT INTO Employees (name, age, gender) VALUES
-('John', 23, 'male'),
-('Janice', 43, 'female'),
-('Rik', 50, 'male');
+INSERT INTO Employees (id, name, age, gender) VALUES
+(1, 'John', 23, 'male'),
+(2, 'Janice', 43, 'female'),
+(3, 'Rik', 50, 'male');
