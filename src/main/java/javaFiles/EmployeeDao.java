@@ -71,7 +71,7 @@ public class EmployeeDao {
 		finally {
 			try {
 				JdbcUtil.closeResources(connect, stmt);
-				result.close();
+				if (result != null) result.close();
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
@@ -142,7 +142,7 @@ public class EmployeeDao {
 		finally {
 			try {
 				JdbcUtil.closeResources(connect, stmt);
-				result.close();
+				if (result != null) result.close();
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
