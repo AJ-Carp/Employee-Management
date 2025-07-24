@@ -21,7 +21,7 @@ public class EmployeeDao {
 		try {
 			connect = JdbcUtil.getConnection();
 			
-			String query = "INSERT INTO Employees (id, name, age, gender) VALUES (?, ?, ?, ?)";
+			String query = "INSERT INTO employees (id, name, age, gender) VALUES (?, ?, ?, ?)";
 			prepStmt = connect.prepareStatement(query);
 			
 			prepStmt.setInt(1, emp.getId());
@@ -57,7 +57,7 @@ public class EmployeeDao {
 			connect = JdbcUtil.getConnection();
 			
 			stmt = connect.createStatement();
-			String query = "SELECT * FROM Employees WHERE id = "+id;
+			String query = "SELECT * FROM employees WHERE id = "+id;
 			result = stmt.executeQuery(query);
 			
 			if (result.next()) {
@@ -85,7 +85,7 @@ public class EmployeeDao {
 		
 		try {
 			connect = JdbcUtil.getConnection();
-			String query = "UPDATE Employees "
+			String query = "UPDATE employees "
 						 + "SET name = ?,"
 					     + "age = ?,"
 						 + "gender = ?"
@@ -110,7 +110,7 @@ public class EmployeeDao {
 		try {
 			connect = JdbcUtil.getConnection();
 			stmt = connect.createStatement();
-			String query = "DELETE FROM Employees WHERE id = "+id;
+			String query = "DELETE FROM employees WHERE id = "+id;
 			stmt.executeUpdate(query);
 		}
 		catch (SQLException e) {
@@ -127,7 +127,7 @@ public class EmployeeDao {
 			connect = JdbcUtil.getConnection();
 			
 			stmt = connect.createStatement();
-			String query = "SELECT * FROM Employees";
+			String query = "SELECT * FROM employees";
 			result = stmt.executeQuery(query);
 			
 			empList = new ArrayList<>();
