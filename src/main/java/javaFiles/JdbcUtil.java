@@ -17,7 +17,7 @@ public class JdbcUtil {
     }
 
     public static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://mysql-aj-carp.alwaysdata.net:3306/aj-carp_jdbc_learning?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+        String url = "jdbc:mysql://mysql:3306/JDBC_Learning";
         String username = System.getenv("DB_USER");
         String password = System.getenv("DB_PASS");
 
