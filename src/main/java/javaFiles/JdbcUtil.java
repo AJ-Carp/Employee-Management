@@ -28,7 +28,7 @@ public class JdbcUtil {
 //        String user = System.getenv("DB_USER");
 //        String pass = System.getenv("DB_PASS");
         
-    	String host = "dpg-d2173vmuk2gs73fujdo0-a.internal";  // internal hostname
+    	String host = "dpg-d2173vmuk2gs73fujdo0-a";  // internal hostname
         String port = "5432";
         String db   = "jdbc_learning";
         String user = "jdbc_learning_user";
