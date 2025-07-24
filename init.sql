@@ -1,10 +1,11 @@
-CREATE TABLE employee (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE Employees (
+  id INT PRIMARY KEY,
   name VARCHAR(100),
-  email VARCHAR(100),
-  department VARCHAR(100)
+  age INT,
+  gender VARCHAR(100)
 );
 
-INSERT INTO employee (name, email, department) VALUES
-('Alice Smith', 'alice@example.com', 'Engineering'),
-('Bob Johnson', 'bob@example.com', 'Marketing');
+INSERT INTO Employees (id, name, age, gender) VALUES
+(1, 'John', 23, 'male'),
+(2, 'Janice', 43, 'female'),
+(3, 'Rik', 50, 'male');
