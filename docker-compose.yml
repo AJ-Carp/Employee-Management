@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
       MYSQL_DATABASE: JDBC_Learning
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
