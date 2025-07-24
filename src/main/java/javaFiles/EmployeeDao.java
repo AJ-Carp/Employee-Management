@@ -88,7 +88,7 @@ public class EmployeeDao {
 			String query = "UPDATE employees "
 						 + "SET name = ?,"
 					     + "age = ?,"
-						 + "gender = ?"
+						 + "gender = ? "
 					     + "WHERE id = "+emp.getId();
 			prepStmt = connect.prepareStatement(query);
 			
